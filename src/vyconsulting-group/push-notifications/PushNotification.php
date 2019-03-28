@@ -1,6 +1,6 @@
 <?php
 
-namespace VyconsultingGroup\PushNotifications;
+namespace VyconsultingGroup;
 
 
 class PushNotification
