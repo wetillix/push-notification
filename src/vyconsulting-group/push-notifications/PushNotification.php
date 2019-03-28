@@ -47,7 +47,7 @@ class PushNotification
         curl_setopt( $ch,CURLOPT_POSTFIELDS,json_encode($this->fields));
         $result = curl_exec($ch);
         curl_close($ch);
-        echo $result;
+        return $result;
     }
 
 }
