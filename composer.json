@@ -1,0 +1,27 @@
+{
+  "name": "vyconsulting-group/google-places",
+  "description": "PHP wrapper FCM",
+  "keywords": ["notifications","FCM","messenging","android","ios"],
+  "homepage": "https://github.com/ChafikHadjAbdouRazack/push-notification",
+  "license": "GPL-3.0-or-later",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/ChafikHadjAbdouRazack/push-notification"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Vyconsulting Group",
+      "email": "contact@vyconsulting-group.com",
+      "homepage": "https://vyconsulting-group.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "classmap": ["src/vyconsulting-group/push-notifications"]
+  }
+}
