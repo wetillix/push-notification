@@ -1,5 +1,5 @@
 {
-  "name": "vyconsulting-group/google-places",
+  "name": "vyconsulting-group/push-notification",
   "description": "PHP wrapper FCM",
   "keywords": ["notifications","FCM","messenging","android","ios"],
   "homepage": "https://github.com/ChafikHadjAbdouRazack/push-notification",
