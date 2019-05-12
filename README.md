@@ -1,7 +1,8 @@
 # push-notification
 FCM push notification with PHP
 
--Installation:
+## INSTALLATION ##
+
  composer require vyconsulting-group/push-notification
  
 -For one device :
