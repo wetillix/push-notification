@@ -40,7 +40,7 @@ class PushNotification
     public function setFields($tokens){
         $this->fields = array(
             'registration_ids'=>$tokens,
-            'message'=>$this->message
+            'notification'=>$this->message
         );
 
     }
