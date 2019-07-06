@@ -3,9 +3,12 @@ FCM push notification with PHP
 
 ## INSTALLATION ##
 
+```
  composer require vyconsulting-group/push-notification
+ ```
  
 -For one device :
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -15,6 +18,7 @@ $firebase->setField('User_Token');
 $firebase->execute();
 ```
 -For multiple device:
+
 ```php
 <?php
 require 'vendor/autoload.php';
