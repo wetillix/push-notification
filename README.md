@@ -24,6 +24,6 @@ $firebase->execute();
 require 'vendor/autoload.php';
 $firebase = new \VyconsultingGroup\PushNotification('API_KEY');
 $firebase->setMessage('test','Hello wolrd',1,1);
-$firebase->setFields('Users_Token');//Users_token should be an json
+$firebase->setFields('Users_Token');//Users_tokens should be an array
 $firebase->execute();
 ```
