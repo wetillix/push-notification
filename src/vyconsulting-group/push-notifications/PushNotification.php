@@ -30,14 +30,14 @@ class PushNotification
             'priority'=>$priority
         );
     }
-   public function setData(array $data){
+   public function setData($data){
         $this->data = $data;
    }
     public function setField($token){
         $this->fields = array(
             'to'=>$token,
             'notification'=>$this->message,
-            'data'=>\json_encode($this->data)
+            'data'=>array('payload'=>json_encode($this->data,JSON_FORCE_OBJECT))
         );
 
     }
@@ -46,7 +46,7 @@ class PushNotification
         $this->fields = array(
             'registration_ids'=>$tokens,
             'notification'=>$this->message,
-            'data'=>$this->data
+            'data'=>array('payload'=>json_encode($this->data,JSON_FORCE_OBJECT))
         );
 
     }
