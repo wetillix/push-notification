@@ -37,7 +37,7 @@ class PushNotification
         $this->fields = array(
             'to'=>$token,
             'notification'=>$this->message,
-            'data'=>$this->data
+            'data'=>\json_encode($this->data)
         );
 
     }
