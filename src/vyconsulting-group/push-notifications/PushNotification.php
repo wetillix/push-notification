@@ -10,6 +10,7 @@ class PushNotification
     private $message = null;
     private $fields=null;
     private  $header = null;
+    private $data = array();
     public function __construct($apiKey)
     {
         $this->key = $apiKey;
@@ -29,11 +30,14 @@ class PushNotification
             'priority'=>$priority
         );
     }
-
+   public function setData(array $data){
+        $this->data = $data;
+   }
     public function setField($token){
         $this->fields = array(
             'to'=>$token,
-            'notification'=>$this->message
+            'notification'=>$this->message,
+            'data'=>$this->data
         );
 
     }
@@ -41,7 +45,8 @@ class PushNotification
     public function setFields($tokens){
         $this->fields = array(
             'registration_ids'=>$tokens,
-            'notification'=>$this->message
+            'notification'=>$this->message,
+            'data'=>$this->data
         );
 
     }
