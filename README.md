@@ -13,7 +13,7 @@ FCM push notification with PHP
 <?php
 require 'vendor/autoload.php';
 $firebase = new \VyconsultingGroup\PushNotification('API_KEY');
-$firebase->setMessage('test','Hello wolrd',1,1);
+$firebase->setMessage('test','Hello wolrd',1,'default','high');
 $firebase->setField('User_Token');
 $firebase->execute();
 ```
@@ -23,7 +23,7 @@ $firebase->execute();
 <?php
 require 'vendor/autoload.php';
 $firebase = new \VyconsultingGroup\PushNotification('API_KEY');
-$firebase->setMessage('test','Hello wolrd',1,1);
+$firebase->setMessage('test','Hello wolrd',1,'default','high');
 $firebase->setFields('Users_Token');//Users_tokens should be an array
 $firebase->execute();
 ```
