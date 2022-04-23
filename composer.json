@@ -1,5 +1,5 @@
 {
-  "name": "vyconsulting-group/push-notification",
+  "name": "wetillix/push-notification",
   "description": "PHP wrapper FCM",
   "keywords": ["notifications","FCM","messenging","android","ios"],
   "homepage": "https://github.com/ChafikHadjAbdouRazack/push-notification",
@@ -12,9 +12,9 @@
   ],
   "authors": [
     {
-      "name": "Vyconsulting Group",
-      "email": "contact@vyconsulting-group.com",
-      "homepage": "https://vyconsulting-group.com",
+      "name": "WETILLIX LLC",
+      "email": "contact@wetillix.com",
+      "homepage": "https://wetillix.com",
       "role": "Developer"
     }
   ],
