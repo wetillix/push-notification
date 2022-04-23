@@ -1,6 +1,6 @@
 <?php
 
-namespace VyconsultingGroup;
+namespace Wetillix;
 
 
 class PushNotification
