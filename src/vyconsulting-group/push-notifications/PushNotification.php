@@ -27,7 +27,7 @@ class PushNotification
             'body'=>$body,
             'vibrate'=>$vibration,
             'sound'=>$sound,
-            'tag'=>$tag
+            'tag'=>$tag,
             'priority'=>$priority
         );
     }
