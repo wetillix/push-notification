@@ -20,13 +20,14 @@ class PushNotification
         );
     }
 
-    public function setMessage($title, $body, $vibration, $sound,$priority){
+    public function setMessage($title, $body, $vibration, $sound,$priority,$tag){
 
         $this->message = array(
             'title'=>$title,
             'body'=>$body,
             'vibrate'=>$vibration,
             'sound'=>$sound,
+            'tag'=>$tag
             'priority'=>$priority
         );
     }
