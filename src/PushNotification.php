@@ -36,12 +36,32 @@ class PushNotification
             ],
         ];
 
-        return self::sendNotificationToHttp($postData);
+        return $this->sendNotificationToHttp($postData);
+    }
+
+    public function sendPushNotificationToTopic(array $data, string $topic = 'iliko')
+    {
+        $postData = [
+            'message' => [
+                'topic' => $topic,
+                'data' => [
+                    'title' => (string) $data['title'],
+                    'body' => (string) $data['description'],
+                    'metadata' => json_encode($data['metadata']),
+                ],
+                'notification' => [
+                    'title' => (string) $data['title'],
+                    'body' => (string) $data['description'],
+                ],
+            ]
+        ];
+        return $this->sendNotificationToHttp($postData);
     }
 
     protected function sendNotificationToHttp(?array $data)
     {
         $client = new Client();
+
         if (isset($this->config['project_id'])) {
             $url = 'https://fcm.googleapis.com/v1/projects/'.$this->config['project_id'].'/messages:send';
             $headers = [
@@ -50,10 +70,12 @@ class PushNotification
             ];
         }
 
-        return $client->post($url,[
+        $response = $client->post($url,[
             'headers' => $headers,
             'json' => $data,
-        ])->getBody();
+        ]);
+
+        return json_decode($response->getBody(), true);
     }
 
     protected function getAccessToken($key): string
@@ -67,10 +89,15 @@ class PushNotification
             'exp' => time() + 3600,
             'iat' => time(),
         ];
+
         $jwtHeader = base64_encode(json_encode(['alg' => 'RS256', 'typ' => 'JWT']));
+
         $jwtPayload = base64_encode(json_encode($jwtToken));
+
         $unsignedJwt = $jwtHeader.'.'.$jwtPayload;
+
         openssl_sign($unsignedJwt, $signature, $key['private_key'], OPENSSL_ALGO_SHA256);
+
         $jwt = $unsignedJwt.'.'.base64_encode($signature);
 
         $response =  $client->post('https://oauth2.googleapis.com/token',[
@@ -78,11 +105,16 @@ class PushNotification
                 'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
                 'assertion' => $jwt,
             ],
-        ])->getBody();
+        ]);
 
-        return $response->json('access_token');
+        $data = json_decode($response->getBody(), true);
+
+        return $data['access_token'];
     }
 
+    /**
+     * @throws \Exception
+     */
     private function processJsonFile(string $filePath): array
     {
         $fileContents = file_get_contents($filePath);
