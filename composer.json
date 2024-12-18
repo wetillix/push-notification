@@ -19,9 +19,13 @@
     }
   ],
   "require": {
-    "php": ">=5.3.0"
+    "php": "^8.1",
+    "guzzlehttp/guzzle": "^7.9",
+    "ext-openssl": "*"
   },
   "autoload": {
-    "classmap": ["src/vyconsulting-group/push-notifications"]
+    "classmap": [
+      "src/"
+    ]
   }
 }
