@@ -33,7 +33,7 @@ class PushNotification
         return $this->sendNotificationToHttp($postData);
     }
 
-    public function sendPushNotificationToTopic(array $data, string $topic = 'iliko')
+    public function sendPushNotificationToTopic(array $data, string $topic = 'topic')
     {
         $postData = [
             'message' => [
