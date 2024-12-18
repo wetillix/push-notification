@@ -42,8 +42,8 @@ Use the `sendPushNotificationToDevice` method to send a notification to a user:
 $response = $pushNotification->sendPushNotificationToDevice(
     token: 'device_token',
     data: [
-        'key1' => 'value1',
-        'key2' => 'value2'
+        'title' => 'value1',
+        'description' => 'value2'
     ]
 );
 
@@ -59,8 +59,8 @@ Use the `sendPushNotificationToTopic` method to send a notification to all users
 $response = $pushNotification->sendPushNotificationToTopic(
     topic: 'topic_name',
     data: [
-        'key1' => 'value1',
-        'key2' => 'value2'
+        'title' => 'value1',
+        'description' => 'value2'
     ]
 );
 
