@@ -1,6 +1,7 @@
 <?php
 
 namespace Wetillix\PushNotification;
+
 use GuzzleHttp\Client;
 
 class PushNotification
