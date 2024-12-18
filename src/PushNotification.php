@@ -25,15 +25,8 @@ class PushNotification
         $postData = [
             'message' => [
                 'token' => $fcmToken,
-                'data' => [
-                    'title' => (string) $data['title'],
-                    'body' => (string) $data['description'],
-                    'metadata' => json_encode($data['metadata']),
-                ],
-                'notification' => [
-                    'title' => (string) $data['title'],
-                    'body' => (string) $data['description'],
-                ],
+                'data' => $data,
+                'notification' => $data,
             ],
         ];
 
@@ -45,15 +38,8 @@ class PushNotification
         $postData = [
             'message' => [
                 'topic' => $topic,
-                'data' => [
-                    'title' => (string) $data['title'],
-                    'body' => (string) $data['description'],
-                    'metadata' => json_encode($data['metadata']),
-                ],
-                'notification' => [
-                    'title' => (string) $data['title'],
-                    'body' => (string) $data['description'],
-                ],
+                'data' => $data,
+                'notification' => $data,
             ]
         ];
         return $this->sendNotificationToHttp($postData);
