@@ -92,26 +92,6 @@ Each response includes methods to check for success or detect errors:
 
 ---
 
-## **Testing**
-
-### **Configure the Testing Environment**
-
-Create a `.env.testing` file with the FCM test parameters:
-
-```env
-FCM_CREDENTIALS_PATH=/path/to/firebase_credentials_test.json
-```
-
-### **Run Unit Tests**
-
-The package includes PHPUnit tests. Run them with:
-
-```bash
-vendor/bin/phpunit
-```
-
----
-
 ## **Contribution**
 
 Contributions are welcome! Follow these steps:
