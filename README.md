@@ -41,19 +41,12 @@ Use the `sendPushNotificationToDevice` method to send a notification to a user:
 ```php
 $response = $pushNotification->sendPushNotificationToDevice(
     token: 'device_token',
-    title: 'Notification Title',
-    body: 'Notification Body',
     data: [
         'key1' => 'value1',
         'key2' => 'value2'
     ]
 );
 
-if ($response->isSuccessful()) {
-    echo 'Notification sent successfully';
-} else {
-    echo 'Error: ' . $response->getError();
-}
 ```
 
 ---
@@ -65,30 +58,13 @@ Use the `sendPushNotificationToTopic` method to send a notification to all users
 ```php
 $response = $pushNotification->sendPushNotificationToTopic(
     topic: 'topic_name',
-    title: 'Notification Title',
-    body: 'Notification Body',
     data: [
         'key1' => 'value1',
         'key2' => 'value2'
     ]
 );
 
-if ($response->isSuccessful()) {
-    echo 'Notification sent successfully to the topic';
-} else {
-    echo 'Error: ' . $response->getError();
-}
 ```
-
----
-
-## **Error Handling**
-
-Each response includes methods to check for success or detect errors:
-
-- `isSuccessful()`: Returns `true` if the operation was successful.
-- `getError()`: Returns the error message in case of failure.
-- `getFailedTokens()`: Lists the tokens for which notification delivery failed.
 
 ---
 
