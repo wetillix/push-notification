@@ -20,11 +20,11 @@ class PushNotification
     /**
      * Device wise notification send
      */
-    public function sendPushNotificationToDevice(string $fcmToken, array $data)
+    public function sendPushNotificationToDevice(string $token, array $data)
     {
         $postData = [
             'message' => [
-                'token' => $fcmToken,
+                'token' => $token,
                 'data' => $data,
                 'notification' => $data,
             ],
